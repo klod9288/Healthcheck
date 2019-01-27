@@ -25,7 +25,7 @@ public class GetUserWhereUserThead extends AsyncTask<String, Void, String> {
             OkHttpClient okHttpClient = new OkHttpClient();
             RequestBody requestBody = new FormEncodingBuilder()
                     .add("isAdd","true")
-                    .add("user", strings[2])
+                    .add("User", strings[0])
                     .build();
             Request.Builder builder = new Request.Builder();
             Request request = builder.url(strings[1]).post(requestBody).build();

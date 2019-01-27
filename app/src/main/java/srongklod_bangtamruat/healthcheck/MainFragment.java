@@ -4,6 +4,7 @@ package srongklod_bangtamruat.healthcheck;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +57,26 @@ public class MainFragment extends Fragment {
                 } else {
 //                    NO Space
 
-                }
+
+
+                    try {
+
+                        GetUserWhereUserThead getUserWhereUserThead = new GetUserWhereUserThead(getActivity());
+                        MyConstant myConstant = new MyConstant();
+
+                        getUserWhereUserThead.execute(user, myConstant.getUrlGetUserWhereUser());
+                        String json = getUserWhereUserThead.get();
+
+                        Log.d("27JanV1", "json ==> " + json);
+
+
+                    } catch (Exception e) {
+                    e.printStackTrace();
+
+
+                    }
+
+                }//if
 
             }
         });
